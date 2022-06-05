@@ -4,12 +4,12 @@ using MongoDB.Bson.Serialization.Attributes;
 namespace ResgistrationAPI.Models
 {
     //Classe clientes
-    public class Customer
+    public class customer
     {
         //Estou indicando que essa propriedade é uma chave primaria que vai ser gerada automaticamente
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
-        public string? Id { get; set; }
+        public string? Id { get; private set; }
 
         //Nome que vai estar na coluna
         [BsonElement("Nome")]
@@ -17,6 +17,9 @@ namespace ResgistrationAPI.Models
 
         [BsonElement("CPF")]
         public string Cpf { get; set; } = string.Empty;
+
+        [BsonElement("Email")]
+        public string Email { get; set; } = string.Empty;
 
         [BsonElement("Endereço")]
         public string Adress { get; set; } = string.Empty;

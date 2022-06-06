@@ -35,18 +35,16 @@ namespace ResgistrationAPI.Services
             await _customerCollection.InsertOneAsync(customer);
 
         //Put
-        public async Task DeleteAsync(string cpf, customer customer) =>
+        public async Task UpdateAsync(string cpf, customer customer) =>
             await _customerCollection.ReplaceOneAsync(x => x.Cpf == cpf, customer);
 
         //Delete
-        public async Task RemoveAsync(string id) =>
-            await _customerCollection.DeleteOneAsync(x => x.Id == id);
+        public async Task RemoveAsync(string cpf) =>
+            await _customerCollection.DeleteOneAsync(x => x.Cpf == cpf);
 
         internal Task<customer> SaveChangeAsync()
         {
-            throw new NotImplementedException();
+            throw new NotImplementedException("Bora testar");
         }
-
-       
     }
 }

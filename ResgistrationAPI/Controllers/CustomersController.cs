@@ -55,22 +55,19 @@ namespace ResgistrationAPI.Controllers
             dbCustomar.Adress = customer.Adress;
             dbCustomar.Phone = customer.Phone;
 
-            _customerServices.DeleteAsync(cpf, dbCustomar);
-
+            _customerServices.UpdateAsync(cpf, dbCustomar);
 
             return await _customerServices.SaveChangeAsync();
-           
+
         }
 
-        //Delete
+        //Delete Erro 500
         [HttpDelete("{cpf}")]
         public async Task<customer> DelCpf(string cpf, customer customer)
         {
             var dbCustomar = await _customerServices.GetAsync(cpf);
 
-
-             _customerServices.DeleteAsync(cpf, dbCustomar);
-
+            _customerServices.RemoveAsync(cpf);
 
             return await _customerServices.SaveChangeAsync();
 

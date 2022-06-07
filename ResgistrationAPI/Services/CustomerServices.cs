@@ -2,12 +2,12 @@
 using MongoDB.Driver;
 using ResgistrationAPI.Models;
 
-namespace ResgistrationAPI.Services
+namespace ResgistrationAPI.Services 
 {
     //Serviço para ligar minha tabela customer com o MongoDB
     public class CustomerServices
     {
-        private readonly IMongoCollection<customer> _customerCollection;
+        private readonly IMongoCollection<Customer> _customerCollection;
 
         //Configurações do meu BD
         public CustomerServices(IOptions<CustomerDatabaseSettings> customerServices)
@@ -16,35 +16,32 @@ namespace ResgistrationAPI.Services
             var mongoDatabase = mongoClient.GetDatabase(customerServices.Value.DatabaseName);
 
             //A ligação da tabela acontece aqui
-            _customerCollection = mongoDatabase.GetCollection<customer>
+            _customerCollection = mongoDatabase.GetCollection<Customer>
                 (customerServices.Value.CustomerCollectionName);
         }
 
         //Metodos de serviço para se usar na API
 
         //Get Todos
-        public async Task<List<customer>> GetAsync() =>
+        public async Task<List<Customer>> GetAsync() =>
             await _customerCollection.Find(x => true).ToListAsync();
 
         //Get Um
-        public async Task<customer> GetAsync(string cpf) =>
+        public async Task<Customer?> GetAsync(string cpf) =>
             await _customerCollection.Find(x => x.Cpf == cpf).FirstOrDefaultAsync();
 
         //Post
-        public async Task CreateAsync(customer customer) =>
-            await _customerCollection.InsertOneAsync(customer);
+        public async Task CreateAsync(Customer newCustomer) =>
+            await _customerCollection.InsertOneAsync(newCustomer);
 
         //Put
-        public async Task UpdateAsync(string cpf, customer customer) =>
-            await _customerCollection.ReplaceOneAsync(x => x.Cpf == cpf, customer);
+        public async Task UpdateAsync(string cpf, Customer updateCustomer) =>
+            await _customerCollection.ReplaceOneAsync(x => x.Cpf == cpf, updateCustomer);
 
         //Delete
         public async Task RemoveAsync(string cpf) =>
             await _customerCollection.DeleteOneAsync(x => x.Cpf == cpf);
 
-        internal Task<customer> SaveChangeAsync()
-        {
-            throw new NotImplementedException("Bora testar");
-        }
+
     }
 }

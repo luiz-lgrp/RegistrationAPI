@@ -4,16 +4,17 @@ using MongoDB.Bson.Serialization.Attributes;
 namespace ResgistrationAPI.Models
 {
     //Classe clientes
-    public class customer
+    public class Customer
     {
         //Estou indicando que essa propriedade é uma chave primaria que vai ser gerada automaticamente
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
-        public string? Id { get; private set; }
+        public string? Id { get; set; }
 
         //Nome que vai estar na coluna
-        [BsonElement("Nome")]
+        [BsonElement("Name")]
         public string Name { get; set; } = string.Empty;
+
 
         [BsonElement("CPF")]
         public string Cpf { get; set; } = string.Empty;
@@ -21,13 +22,13 @@ namespace ResgistrationAPI.Models
         [BsonElement("Email")]
         public string Email { get; set; } = string.Empty;
 
-        [BsonElement("Endereço")]
+        [BsonElement("Adress")]
         public string Adress { get; set; } = string.Empty;
 
-        [BsonElement("Telefone")]
+        [BsonElement("Phone")]
         public string Phone { get; set; } = string.Empty;
 
-        [BsonElement("Ativo")]
+        [BsonElement("Active")]
         public bool Active { get; set; } = true;
     }
 }

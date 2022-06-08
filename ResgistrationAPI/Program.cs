@@ -1,5 +1,7 @@
+using FluentValidation.AspNetCore;
 using ResgistrationAPI.Models;
 using ResgistrationAPI.Services;
+using ResgistrationAPI.Validators;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,8 +16,10 @@ builder.Services.AddSingleton<CustomerServices>();
 
 
 
+//Adicionando o Validator na aplicação
+builder.Services.AddControllers()
+    .AddFluentValidation(config => config.RegisterValidatorsFromAssemblyContaining<AddCustomerValidator>());
 
-builder.Services.AddControllers();
 
 // Learn more about configuring Swagger/OpenAPI 
 builder.Services.AddEndpointsApiExplorer();

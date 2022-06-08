@@ -44,14 +44,16 @@ namespace ResgistrationAPI.Controllers
         [HttpPost]
         public async Task<IActionResult> Post(Customer newCustomer)
         {
+
             await _customerServices.CreateAsync(newCustomer);
 
-            return CreatedAtAction(nameof(Get), new { cpf = newCustomer.Cpf }, newCustomer);
+            return CreatedAtAction(nameof(Get), new { id = newCustomer.Id }, newCustomer);
+
         }
 
         //Put FALTA CORRIGIR ERRO ?
         [HttpPut("{cpf}")]
-        public async Task<IActionResult> Put(string cpf, Customer updatedCustomer)
+        public async Task<IActionResult> Update(string cpf, Customer updatedCustomer)
         {
 
             var customer = await _customerServices.GetAsync(cpf);
@@ -85,6 +87,11 @@ namespace ResgistrationAPI.Controllers
             return NoContent();
         }
 
+        //[HttpPost]
+        //public async Task<IActionResult> PostValid(Customer model)
+        //{
+        //    return CreatedAtAction(nameof(Get), new { id = 1 }, model);
+        //}
 
     }
 }

@@ -42,6 +42,7 @@ namespace ResgistrationAPI.Services
         public async Task RemoveAsync(string cpf) =>
             await _customerCollection.DeleteOneAsync(x => x.Cpf == cpf);
 
+        
 
     }
 }

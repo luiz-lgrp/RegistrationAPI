@@ -41,3 +41,6 @@ C:\C#\DesafioBackConferir\ResgistrationAPI\ResgistrationAPI\obj\Debug\net6.0\ref
 C:\C#\DesafioBackConferir\ResgistrationAPI\ResgistrationAPI\obj\Debug\net6.0\ResgistrationAPI.pdb
 C:\C#\DesafioBackConferir\ResgistrationAPI\ResgistrationAPI\obj\Debug\net6.0\ResgistrationAPI.genruntimeconfig.cache
 C:\C#\DesafioBackConferir\ResgistrationAPI\ResgistrationAPI\obj\Debug\net6.0\ref\ResgistrationAPI.dll
+C:\C#\DesafioBackConferir\ResgistrationAPI\ResgistrationAPI\bin\Debug\net6.0\FluentValidation.dll
+C:\C#\DesafioBackConferir\ResgistrationAPI\ResgistrationAPI\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
+C:\C#\DesafioBackConferir\ResgistrationAPI\ResgistrationAPI\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll

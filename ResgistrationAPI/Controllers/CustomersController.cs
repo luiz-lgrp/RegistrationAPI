@@ -18,13 +18,13 @@ namespace ResgistrationAPI.Controllers
         //Agora vem as APi's
 
 
-        //Get - lista dos clientes
+        
         [HttpGet]
         public async Task<List<Customer>> Get() =>
             await _customerServices.GetAsync();
 
 
-        //Get - Pesquisar por cpf
+        
         [HttpGet("{cpf}")]
         public async Task<ActionResult<Customer>> Get(string cpf) 
         {
@@ -40,10 +40,16 @@ namespace ResgistrationAPI.Controllers
         }
        
 
-        //Post - criando e retornando o cliente com Status Code 201
+       
         [HttpPost]
         public async Task<IActionResult> Post(Customer newCustomer)
         {
+            //var dbCustomer = await _customerServices.Find(f => f.Cpf = newCustomer.Cpf || f.Email = newCustomer.Email);
+
+            //if(newCustomer != null)
+            //{
+
+            //}
 
             await _customerServices.CreateAsync(newCustomer);
 
@@ -51,7 +57,7 @@ namespace ResgistrationAPI.Controllers
 
         }
 
-        //Put FALTA CORRIGIR ERRO ?
+         
         [HttpPut("{cpf}")]
         public async Task<IActionResult> Update(string cpf, Customer updatedCustomer)
         {
@@ -71,7 +77,7 @@ namespace ResgistrationAPI.Controllers
 
         }
 
-        //Delete 
+         
         [HttpDelete("{cpf}")]
         public async Task<IActionResult> Delete(string cpf)
         {
@@ -87,11 +93,6 @@ namespace ResgistrationAPI.Controllers
             return NoContent();
         }
 
-        //[HttpPost]
-        //public async Task<IActionResult> PostValid(Customer model)
-        //{
-        //    return CreatedAtAction(nameof(Get), new { id = 1 }, model);
-        //}
 
     }
 }

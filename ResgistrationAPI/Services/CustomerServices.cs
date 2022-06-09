@@ -34,6 +34,7 @@ namespace ResgistrationAPI.Services
         public async Task CreateAsync(Customer newCustomer) =>
             await _customerCollection.InsertOneAsync(newCustomer);
 
+
         //Put
         public async Task UpdateAsync(string cpf, Customer updateCustomer) =>
             await _customerCollection.ReplaceOneAsync(x => x.Cpf == cpf, updateCustomer);

@@ -18,7 +18,8 @@ builder.Services.AddSingleton<CustomerServices>();
 
 //Adicionando o Validator na aplicação
 builder.Services.AddControllers()
-    .AddFluentValidation(config => config.RegisterValidatorsFromAssemblyContaining<AddCustomerValidator>());
+    .AddFluentValidation(config => config.RegisterValidatorsFromAssemblyContaining
+       <AddCustomerValidator>());
 
 
 // Learn more about configuring Swagger/OpenAPI 

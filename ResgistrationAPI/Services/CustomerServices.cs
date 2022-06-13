@@ -9,6 +9,9 @@ namespace ResgistrationAPI.Services
     {
         private readonly IMongoCollection<Customer> _customerCollection;
 
+       
+
+
         //Configurações do meu BD
         public CustomerServices(IOptions<CustomerDatabaseSettings> customerServices)
         {
@@ -38,6 +41,8 @@ namespace ResgistrationAPI.Services
         //Put
         public async Task UpdateAsync(string cpf, Customer updateCustomer) =>
             await _customerCollection.ReplaceOneAsync(x => x.Cpf == cpf, updateCustomer);
+
+        
 
         //Delete
         public async Task RemoveAsync(string cpf) =>

@@ -1,6 +1,7 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
+
 namespace ResgistrationAPI.Models
 {
     //Classe clientes

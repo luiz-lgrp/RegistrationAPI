@@ -45,16 +45,7 @@ namespace ResgistrationAPI.Controllers
         [HttpPost]
         public async Task<IActionResult> Post(Customer newCustomer)
         {
-            //var dbCustomer = await _customerServices.Customer
-            //    .Find(f => f.Cpf == newCustomer.Cpf || f.Email == newCustomer.Email)
-            //    .FirstOrDefaultAsync();
-
-            //if (newCustomer != null)
-            //{
-            //    throw new Exception("teste");
-            //}
-
-
+           
             await _customerServices.CreateAsync(newCustomer);
 
             return CreatedAtAction(nameof(Get), new { id = newCustomer.Id }, newCustomer);
@@ -97,33 +88,7 @@ namespace ResgistrationAPI.Controllers
             return NoContent();
         }
 
-        //[HttpPut("{id}")]
-        //public async Task<IActionResult> Status(string id, Customer updateCustomer)
-        //{
-
-        //    var customer = await _customerServices.GetAsync(id);
-
-        //    if (customer is null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    if (updateCustomer.Active == true)
-        //    {
-        //        updateCustomer.Active = false;
-        //    }
-        //    else
-        //    {
-        //        updateCustomer.Active = true;
-        //    }
-
-        //    updateCustomer.Id = customer.Id;
-
-        //    await _customerServices.UpdateAsync(id, updateCustomer);
-
-        //    return NoContent();
-
-        //}
+        
 
 
     }

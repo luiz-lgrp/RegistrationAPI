@@ -42,15 +42,15 @@
           "dependencies": {
             "FluentValidation.AspNetCore": {
               "target": "Package",
-              "version": "[11.0.2, )"
+              "version": "[11.0.3, )"
             },
             "MongoDB.Driver": {
               "target": "Package",
-              "version": "[2.15.1, )"
+              "version": "[2.16.0, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.2.3, )"
+              "version": "[6.3.1, )"
             }
           },
           "imports": [
@@ -71,7 +71,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

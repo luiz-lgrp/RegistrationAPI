@@ -13,7 +13,7 @@ namespace ResgistrationAPI.Validators
             RuleFor(m => m.Name)
                 .NotEmpty().NotNull()
                     .WithMessage("Por favor, digite o seu nome")
-                .MaximumLength(30)
+                .MaximumLength(20)
                     .WithMessage("O campo nome não pode passar de 30 caracteres")
                 .MinimumLength(2)
                     .WithMessage("O campo nome não pode ser menor que 02 caracteres");
@@ -32,7 +32,6 @@ namespace ResgistrationAPI.Validators
             RuleFor(m => m.Email)
                 .NotEmpty().NotNull()
                     .WithMessage("Por favor digite o seu e-mail")
-                
                 .EmailAddress()
                     .WithMessage("Formato de e-mail inválido");
 
@@ -42,7 +41,7 @@ namespace ResgistrationAPI.Validators
                     .WithMessage("Por favor digite um telefone")
                 .Matches("^([1-9]{2})-(?:[2-8]|9[1-9])[0-9]{3}-[0-9]{4}$")
                     .WithMessage("Formato de telefone inválido xx-xxxxx-xxxx")
-                .MaximumLength(14)
+                .MaximumLength(13)
                     .WithMessage("telefone não pode ter mais de 11 dígitos contando com DDD");
 
 

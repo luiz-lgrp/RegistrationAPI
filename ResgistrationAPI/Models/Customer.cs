@@ -16,7 +16,6 @@ namespace ResgistrationAPI.Models
         [BsonElement("Name")]
         public string Name { get; set; } = string.Empty;
 
-
         [BsonElement("CPF")]
         public string Cpf { get; set; } = string.Empty;
 

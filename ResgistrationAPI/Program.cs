@@ -7,15 +7,14 @@ var builder = WebApplication.CreateBuilder(args);
 
 
 
-// configurando para pegar a string de conexão
+// configurando para pegar a string de conexão e demais dados
 builder.Services.Configure<CustomerDatabaseSettings>
     (builder.Configuration.GetSection("DevNetStoreDatabase"));
 
 //colocando o customerService no Singleton para criar a interface
-builder.Services.AddSingleton<CustomerServices>();
+builder.Services.AddScoped<CustomerServices>();
 
-
-
+ 
 //Adicionando o Validator na aplicação
 builder.Services.AddControllers()
     .AddFluentValidation(config => config.RegisterValidatorsFromAssemblyContaining

@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ResgistrationAPI.Models;
 using ResgistrationAPI.Services;
-using MongoDB.Driver;
 
 namespace ResgistrationAPI.Controllers
 {
@@ -13,10 +12,6 @@ namespace ResgistrationAPI.Controllers
 
         public CustomersController(CustomerServices customerServices) =>
              _customerServices = customerServices;
-
-
-
-        //Agora vem as APi's
 
 
         
